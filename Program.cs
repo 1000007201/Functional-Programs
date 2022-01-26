@@ -1,59 +1,38 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using FunctionalProgram;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FunctionalProgram
+bool Flag = true;
+Console.WriteLine("1.Display array entered by you.\n2.Find distance from origin.\n3.Find roots of Quadratic equation." +
+    "\n4.Summ of three.\n5.Find velocity of Wind Chill.\n6.Exit");
+int number = Convert.ToInt32(Console.ReadLine());
+while (Flag)
 {
-    internal class Program
+    switch (number)
     {
-        static void Main(string[] args)
-        {
-            bool flag = true;
+        case 1:
+            MultiArray multiArray = new MultiArray();
+            multiArray.ShowArray();
+            break;
+        case 2:
+            EuclideDistance distance = new EuclideDistance();
+            distance.Distance();
+            break;
+        case 3:
+            QuadRoots quadRoots = new QuadRoots();
+            quadRoots.GetRoots();
+            break;
+        case 4:
+            ThreeInteger ti = new ThreeInteger();
+            int[] arr = { 0, -1, 2, -3, 1 };
+            ti.FindTriplet(arr, arr.Length);
+            break;
+        case 5:
+            WindChill windChill = new WindChill();
+            windChill.Wind(40, 10);
+            break;
+        case 6:
+            Flag = false;
+            break;
 
-
-            while (flag)
-            {
-                Console.WriteLine("Enter value:\n1.For String Replacement.\n2.Head and Tail Percentage.\n3.Check Leap Year.\n4.Harmonic Number.\n5.Sum of Three.\n5.Exit.");
-                int task = (int)Convert.ToDouble(Console.ReadLine());
-                switch (task)
-                {
-                    case 1:
-                        StringReplace rep = new StringReplace();
-                        rep.StrReplace("Nishant");
-                        break;
-                    case 2:
-                        TossResult tos = new TossResult();
-                        tos.Toss();
-                        break;
-                    case 3:
-                        LeapYear ly = new LeapYear();
-                        ly.YearCheck();
-                        break;
-                    case 4:
-                        HarmonicNumber hn = new HarmonicNumber();
-                        hn.GetHarmonic();
-                        break;
-                    case 5:
-                        ThreeInteger ti = new ThreeInteger();
-                        int[] arr = { 0, -1, 2, -3, 1 };
-                        int number = arr.Length;
-                        ti.FindTriplet(arr, number);
-                        break;
-                    case 6:
-                        flag = false;
-                        break;
-                    default:
-                        Console.WriteLine("Please Enter right value");
-                        break;
-
-                }
-            }
-
-
-        }
     }
 }
