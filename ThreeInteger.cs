@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeProb2
+namespace FunctionalProgram
 {
     public class ThreeInteger
     {
